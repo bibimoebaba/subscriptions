@@ -11,6 +11,7 @@
 |
 */
 
-$router->get('/subscriptions', 'SubscriptionController@index');
-$router->get('/subscriptions/{id}', 'SubscriptionController@show');
-$router->post('/subscriptions/create', 'SubscriptionController@create');
+$router->get('subscriptions', 'SubscriptionController@index');
+$router->get('subscriptions/{id}', 'SubscriptionController@show');
+$router->post('subscriptions/create', 'SubscriptionController@store');
+
