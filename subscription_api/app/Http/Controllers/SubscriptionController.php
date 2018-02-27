@@ -15,6 +15,10 @@ class SubscriptionController extends Controller
         return(\App\Subscription::all());
     }
 
+    public function show($id){
+        return(\App\Subscription::findOrFail($id));
+    }
+
     public function create(Request $request){
         Subscription::create($request->all());
     }
