@@ -11,6 +11,5 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/subscriptions', 'SubscriptionController@index');
+$router->post('/subscriptions/create', 'SubscriptionController@create');
