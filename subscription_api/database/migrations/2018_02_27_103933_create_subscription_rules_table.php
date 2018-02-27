@@ -28,6 +28,7 @@ class CreateSubscriptionRulesTable extends Migration
             $table->date('time_period');
             $table->integer('priority')->unsigned();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

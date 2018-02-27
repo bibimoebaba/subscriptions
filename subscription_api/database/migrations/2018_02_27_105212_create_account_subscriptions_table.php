@@ -26,6 +26,7 @@ class CreateAccountSubscriptionsTable extends Migration
             $table->date('start_date');
             $table->string('origin_name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

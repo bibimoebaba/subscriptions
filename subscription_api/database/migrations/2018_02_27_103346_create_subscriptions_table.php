@@ -19,6 +19,7 @@ class CreateSubscriptionsTable extends Migration
             $table->text('description');
             $table->string('origin_name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
