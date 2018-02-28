@@ -11,8 +11,12 @@
 |
 */
 
+
+//Subscriptions CRUD
 $router->get('subscriptions', 'SubscriptionController@index');
 $router->get('subscriptions/{id}', 'SubscriptionController@show');
 $router->post('subscriptions', 'SubscriptionController@store');
 $router->put('subscriptions/{id}', 'SubscriptionController@update');
 $router->delete('subscriptions/{id}', 'SubscriptionController@delete');
+
+//Products CRUD

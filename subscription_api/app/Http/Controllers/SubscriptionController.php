@@ -29,6 +29,7 @@ class SubscriptionController extends Controller
     public function delete($id){
         $subscription = Subscription::findOrFail($id);
         $subscription->delete();
+        return(true);
     }
 
     private function validate_request($request){
