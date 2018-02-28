@@ -9,5 +9,9 @@ class Subscription extends Model {
 	use SoftDeletes;
 	
 	protected $table = 'subscriptions';
-	protected $fillable = ['name', 'description', 'origin_name'];
+	protected $fillable = [
+							'name',
+							'description',
+							'origin_name'
+						];
 }
