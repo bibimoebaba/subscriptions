@@ -41,8 +41,8 @@ class SubscriptionController extends Controller
     //Function to validate te request
     private function validate_request($request){
         $this->validate($request, [
-            'name' => 'required|min:1',
-            'origin_name' => 'required'
+            'name'          => 'required|min:1',
+            'origin_name'   => 'required'
         ]);
     }
 }

@@ -25,7 +25,7 @@ class CreateSubscriptionRulesTable extends Migration
                     ->on('products');
             $table->decimal('price');
             $table->integer('quantity')->unsigned();
-            $table->date('time_period');
+            $table->enum('time_period', ['month', 'quarter', 'year']);
             $table->integer('priority')->unsigned();
             $table->timestamps();
             $table->softDeletes();

@@ -27,3 +27,6 @@ $router->put('products/{id}', 'ProductController@update');
 $router->delete('products/{id}', 'ProductController@delete');
 
 //Subscription_rules CRUD
+$router->get('subscriptions/rules', 'SubscriptionController@index');
+
+$router->post('Subscriptions/rules','SubscriptionsController@store');
