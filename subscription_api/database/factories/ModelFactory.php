@@ -38,7 +38,7 @@ $factory->define(App\SubscriptionRule::class, function(Faker\Generator $faker){
 	return [
 		'subscription_id'	=> Subscription::all()->random()->id,
 		'product_id'		=> Product::all()->random()->id,
-		'price' 			=> $faker->randomFloat(),
+		'price' 			=> $faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 500),
 		'quantity' 			=> $faker->randomFloat(),
 		'time_period' 		=> $faker->randomElement(['month', 'quarter', 'year']),
 		'priority' 			=> $faker->randomElement([1, 2, 3, 4, 5]),
