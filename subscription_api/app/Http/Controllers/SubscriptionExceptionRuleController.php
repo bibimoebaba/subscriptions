@@ -40,13 +40,13 @@ class SubscriptionExceptionRuleController extends Controller
     //Function to validate te request
     private function validate_request(Request $request){
         $this->validate($request, [
-            'account_id' => 'required',
-            'subscription_id' => 'required',
-            'product_id' => 'required',
-            'price' => 'required',
-            'quantity' => 'required',
-            'time_period' => 'required',
-            'priority' => 'required'
+            'account_id'        => 'required',
+            'subscription_id'   => 'required',
+            'product_id'        => 'required',
+            'price'             => 'required',
+            'quantity'          => 'required',
+            'time_period'       => 'required',
+            'priority'          => 'required'
         ]);
     }
 }

@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
         	SubscriptionTableSeeder::class,
         	ProductTableSeeder::class,
-        	SubscriptionRuleTableSeeder::class
+        	SubscriptionRuleTableSeeder::class,
+            SubscriptionExceptionRuleTableSeeder::class
         ]);
     }
 }

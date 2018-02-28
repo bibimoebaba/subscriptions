@@ -34,7 +34,6 @@ $factory->define(App\Product::class, function(Faker\Generator $faker){
 });
 
 $factory->define(App\SubscriptionRule::class, function(Faker\Generator $faker){
-
 	return [
 		'subscription_id'	=> Subscription::all()->random()->id,
 		'product_id'		=> Product::all()->random()->id,
@@ -42,6 +41,21 @@ $factory->define(App\SubscriptionRule::class, function(Faker\Generator $faker){
 		'quantity' 			=> $faker->randomFloat(),
 		'time_period' 		=> $faker->randomElement(['month', 'quarter', 'year']),
 		'priority' 			=> $faker->randomElement([1, 2, 3, 4, 5]),
+    	'created_at'		=> $faker->dateTimeBetween($startDate = '-5 months', $endDate = 'now'),
+    	'updated_at'		=> $faker->dateTimeBetween($startDate = '-5 months', $endDate = 'now')
+	];
+});
+
+$factory->define(App\SubscriptionExceptionRule::class, function(Faker\Generator $faker){
+	return [
+		'account_id'		=> $faker->randomDigit(1, 500),
+		'subscription_id'	=> Subscription::all()->random()->id,
+		'product_id'		=> Product::all()->random()->id,
+		'price' 			=> $faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 500),
+		'quantity' 			=> $faker->randomFloat(),
+		'time_period' 		=> $faker->randomElement(['month', 'quarter', 'year']),
+		'priority' 			=> $faker->randomElement([1, 2, 3, 4, 5]),
+    	'created_at'		=> $faker->dateTimeBetween($startDate = '-5 months', $endDate = 'now'),
     	'updated_at'		=> $faker->dateTimeBetween($startDate = '-5 months', $endDate = 'now')
 	];
 });
