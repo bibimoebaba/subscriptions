@@ -28,7 +28,7 @@ class SubscriptionRuleController extends Controller
         $this->validate_request($request);
         $subscriptionRule = SubscriptionRule::findOrFail($id);
         $subscriptionRule->update($request->all());
-        return(response->json(['SubscriptionRule', $subscriptionRule]))
+        return(response()->json(['SubscriptionRule', $subscriptionRule]));
     }
 
     //Delete a single record
