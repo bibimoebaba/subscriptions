@@ -10,11 +10,6 @@ class SubscriptionRule extends Model {
 
 	protected $table = 'subscription_rules';
 	protected $fillable = [
-							'subscription_id',
-							'product_id',
-							'price',
-							'quantity',
-							'time_period',
-							'priority'
-						];
+		'subscription_id', 'product_id', 'price', 'quantity', 'time_period', 'priority'
+	];
 }

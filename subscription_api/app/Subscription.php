@@ -10,8 +10,6 @@ class Subscription extends Model {
 	
 	protected $table = 'subscriptions';
 	protected $fillable = [
-							'name',
-							'description',
-							'origin_name'
-						];
+		'name', 'description', 'origin_name'
+	];
 }

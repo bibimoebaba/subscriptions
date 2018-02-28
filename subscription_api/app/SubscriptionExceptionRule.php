@@ -10,12 +10,6 @@ class SubscriptionExceptionRule extends Model {
 
 	protected $table = 'subscription_rules';
 	protected $fillable = [
-							'account_id',
-							'subscription_id',
-							'product_id',
-							'price',
-							'quantity',
-							'time_period',
-							'priority'
-						];
+		'account_id', 'subscription_id', 'product_id', 'price', 'quantity', 'time_period', 'priority'
+	];
 }
