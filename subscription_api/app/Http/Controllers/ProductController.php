@@ -3,46 +3,44 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\Subscription;
+use \App\Product;
 
-class SubscriptionController extends Controller
+class ProductController extends Controller
 {
-
     //Return all records
     public function index(){
-        return(Subscription::all());
+        return(Product::all());
     }
 
     //Return a single record
     public function show($id){
-        return(Subscription::findOrFail($id));
+        return(Product::findOrFail($id));
     }
 
     //Store record in database
     public function store(Request $request){
         $this->validate_request($request);
-        Subscription::create($request->all());
+        Product::create($request->all());
     }
 
     //Update a single record
     public function update(Request $request, $id){
         $this->validate_request($request);
-        $subscription = Subscription::findOrFail($id);
-        $subscription->update($request->all());
-        return(response()->json(['subscription', $subscription]));
+        $product = Product::findOrFail($id);
+        $product->update($request->all());
+        return(response()->json(['product', $product]));
     }
 
     //Delete a single record
     public function delete($id){
-        $subscription = Subscription::findOrFail($id);
-        $subscription->delete();
+        $product = Product::findOrFail($id);
+        $product->delete();
     }
 
     //Function to validate te request
-    private function validate_request($request){
+    private function validate_request(Request $request){
         $this->validate($request, [
-            'name' => 'required|min:1',
-            'origin_name' => 'required'
+            'name' => 'required|min:1'
         ]);
     }
 }
