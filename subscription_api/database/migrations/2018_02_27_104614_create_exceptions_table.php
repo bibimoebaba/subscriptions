@@ -13,7 +13,7 @@ class CreateExceptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('exceptions', function (Blueprint $table) {
+        Schema::create('subscription_rule_exceptions', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->integer('account_id')->unsigned();
             // $table->foreign('account_id')

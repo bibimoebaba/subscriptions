@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class SubscriptionExceptionRule extends Model {
 	use SoftDeletes;
 
-	protected $table = 'subscription_rules';
+	protected $table = 'subscription_rule_exceptions';
 	protected $fillable = [
 		'account_id', 'subscription_id', 'product_id', 'price', 'quantity', 'time_period', 'priority'
 	];

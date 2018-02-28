@@ -32,3 +32,10 @@ $router->get('rules/{id}', 'SubscriptionRuleController@show');
 $router->post('rules','SubscriptionRuleController@store');
 $router->put('rules/{id}', 'SubscriptionRuleController@update');
 $router->delete('rules/{id}', 'SubscriptionRuleController@delete');
+
+//Subscription_exception_rules CRUD
+$router->get('exceptions', 'SubscriptionExceptionRuleController@index');
+$router->get('exceptions/{id}', 'SubscriptionExceptionRuleController@show');
+$router->post('exceptions','SubscriptionExceptionRuleController@store');
+$router->put('exceptions/{id}', 'SubscriptionExceptionRuleController@update');
+$router->delete('exceptions/{id}', 'SubscriptionExceptionRuleController@delete');
