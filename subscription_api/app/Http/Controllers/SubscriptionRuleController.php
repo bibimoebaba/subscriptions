@@ -40,10 +40,12 @@ class SubscriptionRuleController extends Controller
     //Function to validate te request
     private function validate_request(Request $request){
         $this->validate($request, [
-            'price'     => 'required',
-            'quantity'  => 'required',
-            'date'      => 'required',
-            'priority'  => 'required'
+            'subscription_id'   => 'required',
+            'product_id'        => 'required',
+            'price'             => 'required',
+            'quantity'          => 'required',
+            'time_period'       => 'required',
+            'priority'          => 'required'
         ]);
     }
 }

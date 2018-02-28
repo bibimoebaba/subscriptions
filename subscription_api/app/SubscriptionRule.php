@@ -9,5 +9,5 @@ class SubscriptionRule extends Model {
 	use SoftDeletes;
 
 	protected $table = 'subscription_rules';
-	protected $filalble = ['price', 'quantity', 'date', 'priority'];
+	protected $fillable = ['subscription_id','product_id','price', 'quantity', 'time_period', 'priority'];
 }
