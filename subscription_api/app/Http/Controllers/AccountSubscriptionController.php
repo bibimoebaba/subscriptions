@@ -28,7 +28,7 @@ class AccountSubscriptionController extends Controller
         $this->validate_request($request);
         $record = accsub::findOrFail($id);
         $record->update($request->all());
-        return(response()json(['accountSubscription', $record]));
+        return(response()->json(['accountSubscription', $record]));
     }
 
     //Delete a single record

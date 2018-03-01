@@ -11,7 +11,6 @@
 |
 */
 
-
 //Subscriptions CRUD
 $router->get('subscriptions', 'SubscriptionController@index');
 $router->get('subscriptions/{id}', 'SubscriptionController@show');
@@ -39,3 +38,10 @@ $router->get('exceptions/{id}', 'SubscriptionExceptionRuleController@show');
 $router->post('exceptions','SubscriptionExceptionRuleController@store');
 $router->put('exceptions/{id}', 'SubscriptionExceptionRuleController@update');
 $router->delete('exceptions/{id}', 'SubscriptionExceptionRuleController@delete');
+
+//Account_subsciptions CRUD
+$router->get('account/subscriptions', 'AccountSubscriptionController@index');
+$router->get('account/subscriptions/{id}', 'AccountSubscriptionController@show');
+$router->post('account/subscriptions','AccountSubscriptionController@store');
+$router->put('account/subscriptions/{id}', 'AccountSubscriptionController@update');
+$router->delete('account/subscriptions/{id}', 'AccountSubscriptionController@delete');
