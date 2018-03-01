@@ -40,10 +40,10 @@ class AccountSubscriptionController extends Controller
     //Function to validate te request
     private function validate_request(Request $request){
         $this->validate($request, [
-            'account_id' => 'required',
-            'subscription_id' => 'required',
-            'start_date' => 'required',
-            'origin_name' => 'required'
+            'account_id'        => 'required',
+            'subscription_id'   => 'required',
+            'start_date'        => 'required',
+            'origin_name'       => 'required'
         ]);
     }
 }

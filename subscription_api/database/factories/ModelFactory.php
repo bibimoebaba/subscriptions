@@ -59,3 +59,33 @@ $factory->define(App\SubscriptionExceptionRule::class, function(Faker\Generator 
     	'updated_at'		=> $faker->dateTimeBetween($startDate = '-5 months', $endDate = 'now')
 	];
 });
+
+$factory->define(App\AccountSubscription::class, function(Faker\Generator $faker){
+	return [
+		'account_id' 		=> $faker->randomDigit(1, 500),
+		'subscription_id' 	=> Subscription::all()->random()->id,
+		'start_date' 		=> $faker->dateTimeBetween($startDate = '-5 months', $endDate = 'now'),
+		'origin_name'		=> $faker->name(),
+		'created_at'		=> $faker->dateTimeBetween($startDate = '-5 months', $endDate = 'now'),
+    	'updated_at'		=> $faker->dateTimeBetween($startDate = '-5 months', $endDate = 'now')
+	];
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
