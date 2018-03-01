@@ -23,7 +23,6 @@ class CreateAccountSubscriptionsTable extends Migration
             $table->foreign('subscription_id')
                     ->references('id')
                     ->on('subscriptions');
-            $table->date('start_date');
             $table->string('origin_name');
             $table->timestamps();
             $table->softDeletes();

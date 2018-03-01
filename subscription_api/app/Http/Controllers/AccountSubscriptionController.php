@@ -42,7 +42,6 @@ class AccountSubscriptionController extends Controller
         $this->validate($request, [
             'account_id'        => 'required',
             'subscription_id'   => 'required',
-            'start_date'        => 'required',
             'origin_name'       => 'required'
         ]);
     }

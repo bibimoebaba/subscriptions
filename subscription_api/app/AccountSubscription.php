@@ -10,6 +10,6 @@ class AccountSubscription extends Model {
 
 	protected $table = 'account_subscriptions';
 	protected $fillable = [
-		'account_id', 'subscription_id', 'start_date', 'origin_name'
+		'account_id', 'subscription_id', 'origin_name'
 	];
 }
