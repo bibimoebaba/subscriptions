@@ -12,7 +12,7 @@
 */
 
 /**
- *	CRUD actions for subscriptions
+ *	CRUD actions for subscriptions.
  */
 $router->get('subscriptions', 'SubscriptionController@index');
 $router->get('subscriptions/{id}', 'SubscriptionController@show');
@@ -21,7 +21,7 @@ $router->put('subscriptions/{id}', 'SubscriptionController@update');
 $router->delete('subscriptions/{id}', 'SubscriptionController@delete');
 
 /**
- * 	CRUD actions for products
+ * 	CRUD actions for products.
  */
 $router->get('products', 'ProductController@index');
 $router->get('products/{id}', 'ProductController@show');
@@ -30,7 +30,7 @@ $router->put('products/{id}', 'ProductController@update');
 $router->delete('products/{id}', 'ProductController@delete');
 
 /**
- * 	CRUD actions for subscription rules
+ * 	CRUD actions for subscription rules.
  */
 $router->get('rules', 'SubscriptionRuleController@index');
 $router->get('rules/{id}', 'SubscriptionRuleController@show');
@@ -39,7 +39,7 @@ $router->put('rules/{id}', 'SubscriptionRuleController@update');
 $router->delete('rules/{id}', 'SubscriptionRuleController@delete');
 
 /**
- * 	CRUD actions for exception rules
+ * 	CRUD actions for exception rules.
  */
 $router->get('exceptions', 'SubscriptionExceptionRuleController@index');
 $router->get('exceptions/{id}', 'SubscriptionExceptionRuleController@show');
@@ -48,7 +48,7 @@ $router->put('exceptions/{id}', 'SubscriptionExceptionRuleController@update');
 $router->delete('exceptions/{id}', 'SubscriptionExceptionRuleController@delete');
 
 /**
- * 	CRUD actions for account subscriptions
+ * 	CRUD actions for account subscriptions.
  */
 $router->get('account/subscriptions', 'AccountSubscriptionController@index');
 $router->get('account/subscriptions/{id}', 'AccountSubscriptionController@show');

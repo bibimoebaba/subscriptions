@@ -8,26 +8,26 @@ use \App\SubscriptionRule;
 class SubscriptionRuleController extends Controller
 {
     /**
-     * [index description]
-     * @return [type] [description]
+     * Return all records.
+     * @return Json [description]
      */
     public function index(){
         return(SubscriptionRule::all());
     }
 
     /**
-     * [show description]
-     * @param  [type] $id [description]
-     * @return [type]     [description]
+     * Return a single record.
+     * @param  Integer $id [description]
+     * @return Json     [description]
      */
     public function show($id){
         return(SubscriptionRule::findOrFail($id));
     }
 
     /**
-     * [store description]
+     * Store a single record.
      * @param  Request $request [description]
-     * @return [type]           [description]
+     * @return Json             [description]
      */
     public function store(Request $request){
         $this->validate_request($request);
@@ -35,10 +35,10 @@ class SubscriptionRuleController extends Controller
     }
 
     /**
-     * [update description]
+     * Update a single record and returns it.
      * @param  Request $request [description]
-     * @param  [type]  $id      [description]
-     * @return [type]           [description]
+     * @param  Integer  $id      [description]
+     * @return Json           [description]
      */
     public function update(Request $request, $id){
         $this->validate_request($request);
@@ -48,9 +48,9 @@ class SubscriptionRuleController extends Controller
     }
 
     /**
-     * [delete description]
-     * @param  [type] $id [description]
-     * @return [type]     [description]
+     * Delete a single record
+     * @param  Integer $id [description]
+     * @return void
      */
     public function delete($id){
         $subscriptionRule = SubscriptionRule::findOrFail($id);
@@ -58,9 +58,9 @@ class SubscriptionRuleController extends Controller
     }
 
     /**
-     * [validate_request description]
+     * Validate incoming request.
      * @param  Request $request [description]
-     * @return [type]           [description]
+     * @return void
      */
     private function validate_request(Request $request){
         $this->validate($request, [
