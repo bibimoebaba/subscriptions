@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
         	SubscriptionTableSeeder::class,
         	ProductTableSeeder::class,
         	SubscriptionRuleTableSeeder::class,
-            SubscriptionExceptionRuleTableSeeder::class
+            SubscriptionExceptionRuleTableSeeder::class,
+            AccountSubscriptionTableSeeder::class
         ]);
     }
 }
