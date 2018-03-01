@@ -7,23 +7,39 @@ use \App\Product;
 
 class ProductController extends Controller
 {
-    //Return all records
+    /**
+     * [index description]
+     * @return [type] [description]
+     */
     public function index(){
         return(Product::all());
     }
 
-    //Return a single record
+    /**
+     * [show description]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function show($id){
         return(Product::findOrFail($id));
     }
 
-    //Store record in database
+    /**
+     * [store description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     public function store(Request $request){
         $this->validate_request($request);
         Product::create($request->all());
     }
 
-    //Update a single record
+    /**
+     * [update description]
+     * @param  Request $request [description]
+     * @param  [type]  $id      [description]
+     * @return [type]           [description]
+     */
     public function update(Request $request, $id){
         $this->validate_request($request);
         $product = Product::findOrFail($id);
@@ -31,13 +47,21 @@ class ProductController extends Controller
         return(response()->json(['product', $product]));
     }
 
-    //Delete a single record
+    /**
+     * [delete description]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function delete($id){
         $product = Product::findOrFail($id);
         $product->delete();
     }
 
-    //Function to validate te request
+    /**
+     * [validate_request description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     private function validate_request(Request $request){
         $this->validate($request, [
             'name' => 'required|min:1'

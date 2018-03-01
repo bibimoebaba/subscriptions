@@ -7,23 +7,39 @@ use \App\SubscriptionExceptionRule as ser;
 
 class SubscriptionExceptionRuleController extends Controller
 {
-    //Return all records
+    /**
+     * [index description]
+     * @return [type] [description]
+     */
     public function index(){
         return(ser::all());
     }
 
-    //Return a single record
+    /**
+     * [show description]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function show($id){
         return(ser::findOrFail($id));
     }
 
-    //Store record in database
+    /**
+     * [store description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     public function store(Request $request){
         $this->validate_request($request);
         ser::create($request->all());
     }
 
-    //Update a single record
+    /**
+     * [update description]
+     * @param  Request $request [description]
+     * @param  [type]  $id      [description]
+     * @return [type]           [description]
+     */
     public function update(Request $request, $id){
         $this->validate_request($request);
         $ser = ser::findOrFail($id);
@@ -31,13 +47,21 @@ class SubscriptionExceptionRuleController extends Controller
         return(response()->json(['subscriptionExceptionRule', $ser]));
     }
 
-    //Delete a single record
+    /**
+     * [delete description]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function delete($id){
         $ser = ser::findOrFail($id);
         $ser->delete();
     }
 
-    //Function to validate te request
+    /**
+     * [validate_request description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     private function validate_request(Request $request){
         $this->validate($request, [
             'account_id'        => 'required',

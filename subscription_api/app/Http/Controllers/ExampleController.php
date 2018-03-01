@@ -6,32 +6,56 @@ use Illuminate\Http\Request;
 
 class ExampleController extends Controller
 {
-    //Return all records
+    /**
+     * [index description]
+     * @return [type] [description]
+     */
     public function index(){
 
     }
 
-    //Return a single record
+    /**
+     * [show description]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function show($id){
 
     }
 
-    //Store record in database
+    /**
+     * [store description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     public function store(Request $request){
         $this->validate_request($request);
     }
 
-    //Update a single record
+    /**
+     * [update description]
+     * @param  Request $request [description]
+     * @param  [type]  $id      [description]
+     * @return [type]           [description]
+     */
     public function update(Request $request, $id){
         $this->validate_request($request);
     }
 
-    //Delete a single record
+    /**
+     * [delete description]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function delete($id){
         
     }
 
-    //Function to validate te request
+    /**
+     * [validate_request description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     private function validate_request(Request $request){
         $this->validate($request, [
 

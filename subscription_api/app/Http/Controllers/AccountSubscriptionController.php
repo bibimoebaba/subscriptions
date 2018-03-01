@@ -7,23 +7,39 @@ use \App\AccountSubscription as accsub;
 
 class AccountSubscriptionController extends Controller
 {
-    //Return all records
+    /**
+     * [index description]
+     * @return [type] [description]
+     */
     public function index(){
         return(accsub::all());
     }
 
-    //Return a single record
+    /**
+     * [show description]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function show($id){
         return(accsub::findOrFail($id));
     }
 
-    //Store record in database
+    /**
+     * [store description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     public function store(Request $request){
         $this->validate_request($request);
         accsub::create($request->all());
     }
 
-    //Update a single record
+    /**
+     * [update description]
+     * @param  Request $request [description]
+     * @param  [type]  $id      [description]
+     * @return [type]           [description]
+     */
     public function update(Request $request, $id){
         $this->validate_request($request);
         $record = accsub::findOrFail($id);
@@ -31,13 +47,21 @@ class AccountSubscriptionController extends Controller
         return(response()->json(['accountSubscription', $record]));
     }
 
-    //Delete a single record
+    /**
+     * [delete description]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function delete($id){
         $record = accSub::findOrFail($id);
         $record->delete();
     }
 
-    //Function to validate te request
+    /**
+     * [validate_request description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     private function validate_request(Request $request){
         $this->validate($request, [
             'account_id'        => 'required',

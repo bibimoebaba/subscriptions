@@ -7,23 +7,39 @@ use \App\SubscriptionRule;
 
 class SubscriptionRuleController extends Controller
 {
-    //Return all records
+    /**
+     * [index description]
+     * @return [type] [description]
+     */
     public function index(){
         return(SubscriptionRule::all());
     }
 
-    //Return a single record
+    /**
+     * [show description]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function show($id){
         return(SubscriptionRule::findOrFail($id));
     }
 
-    //Store record in database
+    /**
+     * [store description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     public function store(Request $request){
         $this->validate_request($request);
         SubscriptionRule::create($request->all());
     }
 
-    //Update a single record
+    /**
+     * [update description]
+     * @param  Request $request [description]
+     * @param  [type]  $id      [description]
+     * @return [type]           [description]
+     */
     public function update(Request $request, $id){
         $this->validate_request($request);
         $subscriptionRule = SubscriptionRule::findOrFail($id);
@@ -31,13 +47,21 @@ class SubscriptionRuleController extends Controller
         return(response()->json(['SubscriptionRule', $subscriptionRule]));
     }
 
-    //Delete a single record
+    /**
+     * [delete description]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function delete($id){
         $subscriptionRule = SubscriptionRule::findOrFail($id);
         $subscriptionRule->delete();
     }
 
-    //Function to validate te request
+    /**
+     * [validate_request description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     private function validate_request(Request $request){
         $this->validate($request, [
             'subscription_id'   => 'required',

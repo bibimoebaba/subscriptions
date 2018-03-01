@@ -8,23 +8,39 @@ use \App\Subscription;
 class SubscriptionController extends Controller
 {
 
-    //Return all records
+    /**
+     * [index description]
+     * @return [type] [description]
+     */
     public function index(){
         return(Subscription::all());
     }
 
-    //Return a single record
+    /**
+     * [show description]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function show($id){
         return(Subscription::findOrFail($id));
     }
 
-    //Store record in database
+    /**
+     * [store description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     public function store(Request $request){
         $this->validate_request($request);
         Subscription::create($request->all());
     }
 
-    //Update a single record
+    /**
+     * [update description]
+     * @param  Request $request [description]
+     * @param  [type]  $id      [description]
+     * @return [type]           [description]
+     */
     public function update(Request $request, $id){
         $this->validate_request($request);
         $subscription = Subscription::findOrFail($id);
@@ -32,13 +48,21 @@ class SubscriptionController extends Controller
         return(response()->json(['subscription', $subscription]));
     }
 
-    //Delete a single record
+    /**
+     * [delete description]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
     public function delete($id){
         $subscription = Subscription::findOrFail($id);
         $subscription->delete();
     }
 
-    //Function to validate te request
+    /**
+     * [validate_request description]
+     * @param  [type] $request [description]
+     * @return [type]          [description]
+     */
     private function validate_request($request){
         $this->validate($request, [
             'name'          => 'required|min:1',
