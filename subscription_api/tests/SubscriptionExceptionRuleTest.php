@@ -92,8 +92,13 @@ class SubscriptionExceptionRuleTest extends TestCase
         ]);
 
         $updrec = ser::findOrFail($record->id);
-        $this->assertEquals($updrec->name, $updatedRecord->name);
-        $this->assertEquals($updrec->description, $updatedRecord->description);
+        $this->assertEquals($updrec->account_id, $updatedRecord->account_id);
+        $this->assertEquals($updrec->subscription_id, $updatedRecord->subscription_id);
+        $this->assertEquals($updrec->product_id, $updatedRecord->product_id);
+        $this->assertEquals($updrec->price, $updatedRecord->price);
+        $this->assertEquals($updrec->quantity, $updatedRecord->quantity);
+        $this->assertEquals($updrec->time_period, $updatedRecord->time_period);
+        $this->assertEquals($updrec->priority, $updatedRecord->priority);
     }
 
     public function testIfRecordsCanBeDeleted(){
